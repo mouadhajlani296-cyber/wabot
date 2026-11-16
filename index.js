@@ -275,7 +275,7 @@ function shopText() {
 const URL_RE = /(https?:\/\/|www\.|chat\.whatsapp\.com|wa\.me\/|\b[a-z0-9-]{2,}\.(com|net|org|io|me|ly|xyz|ru|info|tk|gg|cc|top|site|online|link)\b)/i;
 const PHONE_RE = /(\+?\d[\s\-.]?){9,}/;
 const BAD_FILE = /\.(apk|exe|bat|cmd|scr|vbs|jar|msi|lnk|ps1|dex|apks|xapk)$/i;
-const INVIS_RE = /[​-‏‪-‮⁠-⁯﻿̀-ͯؐ-ًؚ-ٟ]/g;
+const INVIS_RE = /[\u200B-\u200F\u202A-\u202E\u2060-\u206F\uFEFF\u0300-\u036F\u0610-\u061A\u064B-\u065F]/g;
 
 async function protect(c, text, content) {
   const g = gd(c.chat);
@@ -1345,3 +1345,4 @@ async function monthCmd(c, cmd, args) {
   }
   return false;
 }
+})();
